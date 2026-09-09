@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>安装 Mr. Krabs 宠物</title>
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f4f1ea; color: #24211d; }
+    main { width: min(520px, calc(100% - 40px)); text-align: center; padding: 48px 20px; }
+    .pet { width: 160px; height: 174px; margin: 0 auto 24px; background: url("spritesheet.webp") 0 0 / 800% 1100% no-repeat; }
+    h1 { margin: 0 0 12px; font-size: clamp(30px, 7vw, 42px); }
+    p { margin: 0 auto 28px; max-width: 420px; font-size: 19px; line-height: 1.7; color: #625d55; }
+    a { display: inline-flex; min-width: 260px; min-height: 64px; align-items: center; justify-content: center; padding: 0 28px; border-radius: 18px; background: #111; color: white; font-size: 22px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 24px rgb(0 0 0 / 16%); }
+    a:focus-visible { outline: 4px solid #3b82f6; outline-offset: 5px; }
+    small { display: block; margin-top: 24px; color: #817a70; font-size: 15px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="pet" role="img" aria-label="Mr. Krabs 宠物预览"></div>
+    <h1>Mr. Krabs</h1>
+    <p>点击下面的大按钮，Codex 会自动打开。看到预览后，再点一次“安装”即可。</p>
+    <a id="install" href="#">安装到 Codex</a>
+    <small>需要事先安装并登录最新版 Codex 桌面端。</small>
+  </main>
+  <script>
+    const imageUrl = new URL("spritesheet.webp", window.location.href).href;
+    const params = new URLSearchParams({
+      name: "Mr. Krabs",
+      description: "日系卡通风格的眼镜人物宠物，保留本人发型、眼镜、服装与自然身体比例。",
+      imageUrl,
+      spriteVersionNumber: "2"
+    });
+    document.querySelector("#install").href = `codex://pets/install?${params}`;
+  </script>
+</body>
+</html>
