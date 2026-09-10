@@ -9,7 +9,8 @@
     body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f4f1ea; color: #24211d; }
     main { width: min(520px, calc(100% - 40px)); text-align: center; padding: 48px 20px; }
     .pet { width: 160px; height: 174px; margin: 0 auto 24px; background: url("spritesheet.webp") 0 0 / 800% 1100% no-repeat; }
-    h1 { margin: 0 0 12px; font-size: clamp(30px, 7vw, 42px); }
+    .greeting { margin: 0 0 10px; color: #b33a2b; font-size: clamp(30px, 7vw, 42px); line-height: 1.3; }
+    h1 { margin: 0 0 12px; font-size: clamp(24px, 6vw, 32px); }
     p { margin: 0 auto 28px; max-width: 420px; font-size: 19px; line-height: 1.7; color: #625d55; }
     a { display: inline-flex; min-width: 260px; min-height: 64px; align-items: center; justify-content: center; padding: 0 28px; border-radius: 18px; background: #111; color: white; font-size: 22px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 24px rgb(0 0 0 / 16%); }
     a:focus-visible { outline: 4px solid #3b82f6; outline-offset: 5px; }
@@ -21,6 +22,7 @@
 <body>
   <main>
     <div class="pet" role="img" aria-label="Mr. Krabs 宠物预览"></div>
+    <div class="greeting">祝您教师节快乐，桃李满天下！</div>
     <h1>Mr. Krabs</h1>
     <p>点击下面的大按钮，Codex 会自动打开。看到 Mr. Krabs 预览后，再点一次“安装”即可。</p>
     <a id="install" href="codex://pets/install?name=Mr%20Krabs&amp;imageUrl=https%3A%2F%2Fwike299.github.io%2Fmr-krabs-codex-pet%2Fspritesheet.webp&amp;spriteVersionNumber=2">安装到 Codex</a>
